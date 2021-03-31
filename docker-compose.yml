@@ -14,6 +14,9 @@ services:
         tty: true
         # volumes:
         #     - ./jenkins_home:/var/jenkins_home:rw
+    my-marvin:
+        image: "my-marvin"
+
 
     cli:
         image: openjdk:9-jre-slim
