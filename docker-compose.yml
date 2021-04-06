@@ -12,19 +12,5 @@ services:
             # Do not map the JNLP port for security reasons
             # - 50000:50000
         tty: true
-        # volumes:
-        #     - ./jenkins_home:/var/jenkins_home:rw
-    my-marvin:
-        image: "my-marvin"
-
-
-    cli:
-        image: openjdk:9-jre-slim
-        environment:
-            JENKINS_LEADER_ADMIN_USER: "${JENKINS_LEADER_ADMIN_USER}"
-            JENKINS_LEADER_ADMIN_PASSWORD: "${JENKINS_LEADER_ADMIN_PASSWORD}"
-            JENKINS_URL: "http://jenkins:8080"
-        tty: true
-        # volumes:
-        #     - ./cli:/cli:ro
-        working_dir: /cli
+        volumes:
+            - ./my_marvin.yml:/var/jenkins_casc.yml
