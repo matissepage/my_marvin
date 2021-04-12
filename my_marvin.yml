@@ -9,6 +9,7 @@ jenkins:
       - id: "chocolateen"
         name: "Hugo"
         password: '${USER_CHOCOLATEEN_PASSWORD}'
+        authorizationStrategy: loggedInUsersCanDoAnything
 
       - id: "vaugie_g"
         name: "Garance"
