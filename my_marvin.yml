@@ -7,9 +7,9 @@ jenkins:
     local:
       allowsSignup: false
       users:
-        - id: chocolateen
-          name: Hugo
-          password: ${USER_CHOCOLATEEN_PASSWORD}
+        - id: "chocolateen"
+          name: "Hugo"
+          password: '${USER_CHOCOLATEEN_PASSWORD}'
 
         - id: "vaugie_g"
           name: "Garance"
@@ -23,38 +23,47 @@ jenkins:
           name: "Nassim"
           password: '${USER_NASSO_PASSWORD}'
 
-  # authorizationStrategy:
-  #   roleBased:
-  #     roles:
-  #       global:
-  #         - name: "admin"
-  #           description: "Marvin Master"
-  #           permissions:
-  #             - "Overall/Administer"
-  #           assignments:
-  #             - Hugo
-  #         - name: "ape"
-  #           description: "Pedagogical team member"
-  #           permissions:
-  #             - "Job/Build"
-  #             - "Workspaces/Read"
-  #             # A changer
-  #           assignments:
-  #             - Jeremy
-  #         - name: "gorilla"
-  #           description: "Group Obsessively Researching Innovation Linked to Learning and Accomplishment"
-  #           permissions:
-  #             - "Overall/Administer"
-  #             # A changer
-  #           assignments:
-  #             - Garance
-  #         - name: "assist"
-  #           description: "“Assistant"
-  #           permissions:
-  #             - "Overall/Read"
-  #             - "Job/Read"
-  #           assignments:
-  #             - Nassim
+  
+  authorizationStrategy:
+    roleBased:
+      roles:
+        global:
+          - name: "admin"
+            description: "Marvin Master"
+            permissions:
+              - "Overall/Administer"
+            assignments:
+              - "chocolateen"
+          - name: "ape"
+            description: "Pedagogical team member"
+            permissions:
+              - "Job/Build"
+              - "Job/Read"
+              - "Job/Workspaces"
+              - "Overall/Read"
+            assignments:
+              - "Jeremy"
+          - name: "gorilla"
+            description: "Group Obsessively Researching Innovation Linked to Learning and Accomplishment"
+            permissions:
+              - "Job/Build"
+              - "Job/Read"
+              - "Job/Workspaces"
+              - "Job/Create"
+              - "Job/Configure"
+              - "Job/Delete"
+              - "Job/Move"
+              - "Overall/Read"
+            assignments:
+              - Garance
+          - name: "assist"
+            description: "“Assistant"
+            permissions:
+              - "Overall/Read"
+              - "Job/Read"
+              - "Job/Workspaces"
+            assignments:
+              - Nassim
 
   # tool:
   #   git:
