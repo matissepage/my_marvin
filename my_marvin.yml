@@ -11,49 +11,50 @@ jenkins:
           name: Hugo
           password: ${USER_CHOCOLATEEN_PASSWORD}
 
-        # - id: "vaugie_g"
-        #   name: "Garance"
-        #   password: '${USER_VAUGIE_G_PASSWORD}'
+        - id: "vaugie_g"
+          name: "Garance"
+          password: '${USER_VAUGIE_G_PASSWORD}'
 
-        # - id: "i_dont_know"
-        #   name: "Jeremy"
-        #   password: '${USER_I_DONT_KNOW_PASSWORD}'
+        - id: "i_dont_know"
+          name: "Jeremy"
+          password: '${USER_I_DONT_KNOW_PASSWORD}'
     
-        # - id: "nasso"
-        #   name: "Nassim"
-        #   password: '${USER_NASSO_PASSWORD}'
+        - id: "nasso"
+          name: "Nassim"
+          password: '${USER_NASSO_PASSWORD}'
 
-  authorizationStrategy:
-  roleBased:
-    roles:
-      global:
-        - name: "admin"
-          description: "Marvin Master"
-          permissions:
-            - "Overall/Administer"
-          assignments:
-            - Hugo
-        - name: "ape"
-          description: "Pedagogical team member"
-          permissions:
-            - "Overall/Administer"
-            # A changer
-          assignments:
-            - Jeremy
-        - name: "gorilla"
-          description: "Group Obsessively Researching Innovation Linked to Learning and Accomplishment"
-          permissions:
-            - "Overall/Administer"
-            # A changer
-          assignments:
-            - Garance
-        - name: "assist"
-          description: "“Assistant"
-          permissions:
-            - "Overall/Read"
-            - "Job/Read"
-          assignments:
-            - Nassim
+  # authorizationStrategy:
+  #   roleBased:
+  #     roles:
+  #       global:
+  #         - name: "admin"
+  #           description: "Marvin Master"
+  #           permissions:
+  #             - "Overall/Administer"
+  #           assignments:
+  #             - Hugo
+  #         - name: "ape"
+  #           description: "Pedagogical team member"
+  #           permissions:
+  #             - "Job/Build"
+  #             - "Workspaces/Read"
+  #             # A changer
+  #           assignments:
+  #             - Jeremy
+  #         - name: "gorilla"
+  #           description: "Group Obsessively Researching Innovation Linked to Learning and Accomplishment"
+  #           permissions:
+  #             - "Overall/Administer"
+  #             # A changer
+  #           assignments:
+  #             - Garance
+  #         - name: "assist"
+  #           description: "“Assistant"
+  #           permissions:
+  #             - "Overall/Read"
+  #             - "Job/Read"
+  #           assignments:
+  #             - Nassim
 
   # tool:
   #   git:
