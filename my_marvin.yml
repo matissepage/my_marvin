@@ -23,6 +23,9 @@ jenkins:
           name: "Nassim"
           password: '${USER_NASSO_PASSWORD}'
 
+  jobs:
+    - file: ./job_dsl.groovy
+
   authorizationStrategy:
     roleBased:
       roles:
@@ -63,9 +66,3 @@ jenkins:
               - "Job/Workspaces"
             assignments:
               - Nassim
-
-  # tool:
-  #   git:
-  #     installations:
-  #       - name: git
-  #         home: /usr/local/bin/git
