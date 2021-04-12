@@ -69,8 +69,5 @@ jenkins:
               - Nassim
 
 jobs:
-  - script: >
-      folder('Tools') {
-        displayName('Tools')
-        description('Folder for miscellaneous tools.')
-      }
+  - file: ./job_dsl.groovy
+

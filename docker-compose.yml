@@ -1,14 +1,13 @@
 version: '3'
 
 services:
-    jenkins:
-        image: jenkins/jenkins:lts-alpine
-        environment:
-            JAVA_OPTS: "-Djenkins.install.runSetupWizard=false"
-            JENKINS_LEADER_ADMIN_USER: "${JENKINS_LEADER_ADMIN_USER}"
-            JENKINS_LEADER_ADMIN_PASSWORD: "${JENKINS_LEADER_ADMIN_PASSWORD}"
-        ports:
-            - 8080:8080
-        tty: true
-        volumes:
-            - ./my_marvin.yml:/var/jenkins_casc.yml
+  jenkins:
+    build: .
+    restart: always
+    env_file:
+      - jenkins.env
+    volumes:
+      - ./my_marvin.yml:/var/jenkins_casc.yml
+      - ./job_dsl.groovy:/job_dsl.groovy
+    ports:
+      - "8080:8080"
