@@ -42,31 +42,32 @@ jenkins:
             permissions:
               - "Job/Build"
               - "Job/Read"
-              - "Job/Workspaces"
+              - "Job/Workspace"
               - "Overall/Read"
             assignments:
-              - "Jeremy"
+              - "i_dont_know"
           - name: "gorilla"
             description: "Group Obsessively Researching Innovation Linked to Learning and Accomplishment"
             permissions:
               - "Job/Build"
               - "Job/Read"
-              - "Job/Workspaces"
+              - "Job/Workspace"
               - "Job/Create"
               - "Job/Configure"
               - "Job/Delete"
               - "Job/Move"
+              - "Job/Cancel"
               - "Overall/Read"
             assignments:
-              - Garance
+              - "vaugie_g"
           - name: "assist"
-            description: "“Assistant"
+            description: "Assistant"
             permissions:
               - "Overall/Read"
               - "Job/Read"
-              - "Job/Workspaces"
+              - "Job/Workspace"
             assignments:
-              - Nassim
+              - "nasso"
 
 jobs:
   - file: ./job_dsl.groovy
